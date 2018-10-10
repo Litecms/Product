@@ -9,6 +9,11 @@ Require this package with composer.
 Laravel 5.5 uses Package Auto-Discovery, so doesn't require you to manually add the ServiceProvider.
 
 
+## Migration and seeds
+
+    php artisan migrate
+    php artisan db:seed --class=Litecms\\ProductTableSeeder
+    
 ## Publishing
 
 **Configuration**
