@@ -48,7 +48,7 @@ class CategoryResourceController extends BaseController
 
         $categories = $this->repository->paginate();
 
-        return $this->response->title(trans('product::category.names'))
+        return $this->response->setMetaTitle(trans('product::category.names'))
             ->view('product::category.index', true)
             ->data(compact('categories'))
             ->output();
@@ -71,7 +71,7 @@ class CategoryResourceController extends BaseController
             $view = 'product::category.new';
         }
 
-        return $this->response->title(trans('app.view') . ' ' . trans('product::category.name'))
+        return $this->response->setMetaTitle(trans('app.view') . ' ' . trans('product::category.name'))
             ->data(compact('category'))
             ->view($view, true)
             ->output();
@@ -88,7 +88,7 @@ class CategoryResourceController extends BaseController
     {
 
         $category = $this->repository->newInstance([]);
-        return $this->response->title(trans('app.new') . ' ' . trans('product::category.name')) 
+        return $this->response->setMetaTitle(trans('app.new') . ' ' . trans('product::category.name')) 
             ->view('product::category.create', true) 
             ->data(compact('category'))
             ->output();
@@ -134,7 +134,7 @@ class CategoryResourceController extends BaseController
      */
     public function edit(CategoryRequest $request, Category $category)
     {
-        return $this->response->title(trans('app.edit') . ' ' . trans('product::category.name'))
+        return $this->response->setMetaTitle(trans('app.edit') . ' ' . trans('product::category.name'))
             ->view('product::category.edit', true)
             ->data(compact('category'))
             ->output();

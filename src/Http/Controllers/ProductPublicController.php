@@ -38,7 +38,7 @@ class ProductPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('product::product.names'))
+        return $this->response->setMetaTitle(trans('product::product.names'))
             ->view('product::public.product.index')
             ->data(compact('products'))
             ->output();
@@ -60,7 +60,7 @@ class ProductPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('product::product.names'))
+        return $this->response->setMetaTitle(trans('product::product.names'))
             ->view('product::public.product.index')
             ->data(compact('products'))
             ->output();
@@ -80,7 +80,7 @@ class ProductPublicController extends BaseController
                          ->where('slug', $slug);
         })->first(['*']);
 
-        return $this->response->title($product->name . trans('product::product.name'))
+        return $this->response->setMetaTitle($product->name . trans('product::product.name'))
             ->view('product::public.product.show')
             ->data(compact('product'))
             ->output();

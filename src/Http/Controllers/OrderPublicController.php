@@ -36,7 +36,7 @@ class OrderPublicController extends BaseController
         $product = $this->product->findBySlug($slug);
 
 
-        return $this->response->title(trans('product::order.names'))
+        return $this->response->setMetaTitle(trans('product::order.names'))
             ->view('product::public.order.index')
             ->data(compact('product'))
             ->output();
@@ -58,7 +58,7 @@ class OrderPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('product::order.names'))
+        return $this->response->setMetaTitle(trans('product::order.names'))
             ->view('product::public.order.index')
             ->data(compact('orders'))
             ->output();
@@ -78,7 +78,7 @@ class OrderPublicController extends BaseController
                          ->where('slug', $slug);
         })->first(['*']);
 
-        return $this->response->title($order->name . trans('product::order.name'))
+        return $this->response->setMetaTitle($order->name . trans('product::order.name'))
             ->view('product::public.order.show')
             ->data(compact('order'))
             ->output();

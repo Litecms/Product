@@ -40,7 +40,7 @@ class CategoryPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('product::category.names'))
+        return $this->response->setMetaTitle(trans('product::category.names'))
             ->view('product::public.category.index')
             ->data(compact('categories'))
             ->output();
@@ -62,7 +62,7 @@ class CategoryPublicController extends BaseController
         })->paginate();
 
 
-        return $this->response->title(trans('product::category.names'))
+        return $this->response->setMetaTitle(trans('product::category.names'))
             ->view('product::public.category.index')
             ->data(compact('categories'))
             ->output();
@@ -79,7 +79,7 @@ class CategoryPublicController extends BaseController
     { 
         $category = $this->repository->findBySlug($slug);
         $products = $this->product->products($category['id']);
-        return $this->response->title(trans('product::category.name'))
+        return $this->response->setMetaTitle(trans('product::category.name'))
             ->view('product::public.product.index')
             ->data(compact('products'))
             ->output();

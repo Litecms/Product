@@ -48,7 +48,7 @@ class OrderResourceController extends BaseController
 
         $orders = $this->repository->paginate();
 
-        return $this->response->title(trans('product::order.names'))
+        return $this->response->setMetaTitle(trans('product::order.names'))
             ->view('product::order.index', true)
             ->data(compact('orders'))
             ->output();
@@ -71,7 +71,7 @@ class OrderResourceController extends BaseController
             $view = 'product::order.new';
         }
 
-        return $this->response->title(trans('app.view') . ' ' . trans('product::order.name'))
+        return $this->response->setMetaTitle(trans('app.view') . ' ' . trans('product::order.name'))
             ->data(compact('order'))
             ->view($view, true)
             ->output();
@@ -88,7 +88,7 @@ class OrderResourceController extends BaseController
     {
 
         $order = $this->repository->newInstance([]);
-        return $this->response->title(trans('app.new') . ' ' . trans('product::order.name')) 
+        return $this->response->setMetaTitle(trans('app.new') . ' ' . trans('product::order.name')) 
             ->view('product::order.create', true) 
             ->data(compact('order'))
             ->output();
@@ -134,7 +134,7 @@ class OrderResourceController extends BaseController
      */
     public function edit(OrderRequest $request, Order $order)
     {
-        return $this->response->title(trans('app.edit') . ' ' . trans('product::order.name'))
+        return $this->response->setMetaTitle(trans('app.edit') . ' ' . trans('product::order.name'))
             ->view('product::order.edit', true)
             ->data(compact('order'))
             ->output();
