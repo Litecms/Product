@@ -1,4 +1,4 @@
-            @include('product::public.product.partial.header')
+            @include('product::product.partial.header')
 
             <section class="grid">
                 <div class="container">

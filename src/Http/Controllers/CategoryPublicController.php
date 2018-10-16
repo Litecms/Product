@@ -41,7 +41,7 @@ class CategoryPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('product::category.names'))
-            ->view('product::public.category.index')
+            ->view('product::category.index')
             ->data(compact('categories'))
             ->output();
     }
@@ -63,7 +63,7 @@ class CategoryPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('product::category.names'))
-            ->view('product::public.category.index')
+            ->view('product::category.index')
             ->data(compact('categories'))
             ->output();
     }
@@ -80,7 +80,7 @@ class CategoryPublicController extends BaseController
         $category = $this->repository->findBySlug($slug);
         $products = $this->product->products($category['id']);
         return $this->response->setMetaTitle(trans('product::category.name'))
-            ->view('product::public.product.index')
+            ->view('product::product.index')
             ->data(compact('products'))
             ->output();
     }

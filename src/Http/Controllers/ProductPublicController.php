@@ -39,7 +39,7 @@ class ProductPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('product::product.names'))
-            ->view('product::public.product.index')
+            ->view('product::product.index')
             ->data(compact('products'))
             ->output();
     }
@@ -61,7 +61,7 @@ class ProductPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('product::product.names'))
-            ->view('product::public.product.index')
+            ->view('product::product.index')
             ->data(compact('products'))
             ->output();
     }
@@ -81,7 +81,7 @@ class ProductPublicController extends BaseController
         })->first(['*']);
 
         return $this->response->setMetaTitle($product->name . trans('product::product.name'))
-            ->view('product::public.product.show')
+            ->view('product::product.show')
             ->data(compact('product'))
             ->output();
     }

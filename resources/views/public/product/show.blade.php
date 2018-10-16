@@ -1,4 +1,4 @@
-       @include('product::public.product.partial.header')
+       @include('product::product.partial.header')
 
 
 <section class="single">
@@ -11,7 +11,7 @@
                                 <div class="widget category">
                                    
                                     <ul class="mt-20">
-                                        @include('product::public.product.partial.aside')
+                                        @include('product::product.partial.aside')
                                     </ul>
                                 </div>
                             </div>

@@ -37,7 +37,7 @@ class OrderPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('product::order.names'))
-            ->view('product::public.order.index')
+            ->view('product::order.index')
             ->data(compact('product'))
             ->output();
     }
@@ -59,7 +59,7 @@ class OrderPublicController extends BaseController
 
 
         return $this->response->setMetaTitle(trans('product::order.names'))
-            ->view('product::public.order.index')
+            ->view('product::order.index')
             ->data(compact('orders'))
             ->output();
     }
@@ -79,7 +79,7 @@ class OrderPublicController extends BaseController
         })->first(['*']);
 
         return $this->response->setMetaTitle($order->name . trans('product::order.name'))
-            ->view('product::public.order.show')
+            ->view('product::order.show')
             ->data(compact('order'))
             ->output();
     }

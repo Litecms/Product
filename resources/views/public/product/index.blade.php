@@ -1,10 +1,10 @@
-            @include('product::public.product.partial.header')
+            @include('product::product.partial.header')
 
             <section class="grid">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-3">
-                            @include('product::public.product.partial.aside')
+                            @include('product::product.partial.aside')
                         </div>
                         @foreach($products as $product)
                         <div class="col-md-3 ">
