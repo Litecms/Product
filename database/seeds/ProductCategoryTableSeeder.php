@@ -79,7 +79,7 @@ class ProductCategoryTableSeeder extends Seeder
             // Uncomment  and edit this section for entering value to settings table.
             /*
         [
-        'pacakge'   => 'Product',
+        'package'   => 'Product',
         'module'    => 'Category',
         'user_type' => null,
         'user_id'   => null,
